@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDO | Adopting AI</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Trebuchet MS"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            red: '#EC1D24',
+                            dark: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #EC1D24; }
+        
+        .brand-gradient-text {
+            background: linear-gradient(to right, #EC1D24, #f87171);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .step-transition {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .agenda-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(236, 29, 36, 0.4);
+            background-color: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 10px 30px -10px rgba(236, 29, 36, 0.2);
+        }
+        
+        .content-scroll {
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-100 font-sans selection:bg-brand-red selection:text-white">
+
+    <header class="relative overflow-hidden border-b border-slate-800 bg-slate-950 pt-16 pb-20">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[400px] bg-brand-red/10 blur-[120px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="flex items-center gap-4 md:gap-6 mb-12">
+                <img src="https://raw.githubusercontent.com/jerseyitguy/CopilotStudioCourse/main/bdo-white.png" alt="BDO Logo" class="h-8 md:h-10 w-auto" onerror="this.src='https://via.placeholder.com/150x50/EC1D24/FFFFFF?text=BDO+LOGO'">
+                <div class="h-6 w-px bg-slate-700"></div>
+                <span class="text-lg md:text-xl font-semibold tracking-tight text-slate-300 uppercase tracking-widest text-sm">Training & Adoption</span>
+            </div>
+
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red/10 border border-brand-red/20 text-brand-red text-xs font-bold uppercase tracking-widest mb-6">
+                <i data-lucide="sparkles" class="w-4 h-4"></i>
+                Session Summary
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
+                Adopting AI: <br />
+                <span class="brand-gradient-text">Key Points & Practice</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-3xl leading-relaxed">
+                A practical guide to understanding Artificial Intelligence and leveraging Microsoft Copilot Chat for immediate workplace productivity. Human + AI = Augmented Intelligence.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col mb-12">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="brain-circuit" class="w-8 h-8 text-brand-red"></i>
+                    <h2 class="text-3xl font-bold">Theory & Understanding of AI</h2>
+                </div>
+                <p class="text-slate-400 max-w-3xl mb-6 leading-relaxed">
+                    Artificial Intelligence (AI) means computers doing tasks that normally require human intelligence.  Generative AI works a bit like a sophisticated predictive text engine. It doesn't retrieve facts from a database; instead, it has been trained on massive amounts of text to recognize patterns of language. It predicts the most likely next words to form a response.
+                </p>
+            </div>
+            
+            <div id="theory-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+                </div>
+
+            <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10">
+                <div class="flex items-center gap-3 mb-8">
+                    <i data-lucide="scale" class="w-6 h-6 text-brand-red"></i>
+                    <h3 class="text-2xl font-bold uppercase tracking-tight">Myths vs. Reality</h3>
+                </div>
+                <div id="myths-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-900 relative">
+        <div class="absolute right-0 top-1/4 w-96 h-96 bg-brand-red/5 blur-[100px] rounded-full pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-16 max-w-3xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <i data-lucide="zap" class="w-8 h-8 text-brand-red"></i>
+                    <h2 class="text-4xl font-bold uppercase tracking-tight">Quick Wins with Copilot Chat</h2>
+                </div>
+                <p class="text-lg text-slate-400">
+                    Practical strategies to implement right now. From refining prompts to automating your meeting transcripts, here is how to make AI work for you.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div id="stepper-nav" class="lg:w-1/3 flex flex-col gap-2">
+                    </div>
+
+                <div class="lg:w-2/3">
+                    <div class="bg-slate-950 border border-slate-800 rounded-3xl p-8 md:p-12 min-h-[580px] shadow-2xl relative overflow-hidden flex flex-col">
+                        <div class="absolute -top-24 -right-24 w-64 h-64 bg-brand-red/10 blur-[80px] rounded-full pointer-events-none"></div>
+                        <div id="step-content-inner" class="relative w-full h-full flex flex-col flex-grow">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-16 border-t border-slate-800 text-center text-slate-500">
+        <div class="flex flex-col items-center gap-6">
+            <img src="https://raw.githubusercontent.com/jerseyitguy/CopilotStudioCourse/main/bdo-white.png" alt="BDO Logo" class="h-8 opacity-40 grayscale" onerror="this.src='https://via.placeholder.com/100x30/FFFFFF/000000?text=BDO'">
+            <div class="flex justify-center items-center gap-2">
+                <i data-lucide="shield-check" class="w-5 h-5 text-brand-red"></i>
+                <span class="font-bold tracking-widest uppercase text-xs">Training & Adoption | 2026</span>
+            </div>
+            <p class="text-xs max-w-md mx-auto opacity-60">The goal is not to replace people, but to give each person a productivity superpower.</p>
+        </div>
+    </footer>
+
+    <script>
+        // --- DATA ---
+        const theoryItems = [
+            { title: "Machine Learning", desc: "A branch of AI where algorithms learn and improve from data over time, similar to how humans learn new skills.", icon: "network" },
+            { title: "Generative AI", desc: "A newer type of AI that can create new content (text, images) by learning patterns from existing data.", icon: "sparkles" },
+            { title: "Pattern Recognition", desc: "AI doesn't truly think or understand like a person. It follows patterns in data. It stitches together plausible answers.", icon: "cpu" }
+        ];
+
+        const mythsItems = [
+            { myth: "AI is like a human brain.", reality: "AI is not truly intelligent or sentient. It doesn't understand the world as we do." },
+            { myth: "AI comes up with original ideas.", reality: "It generates content by remixing patterns it has seen. It's fundamentally imitating human-created examples." },
+            { myth: "AI always gets things right.", reality: "It often makes mistakes or 'hallucinates'. It does not know truth from falsehood." }
+        ];
+
+        const steps = [
+            {
+                id: 1,
+                title: "Crafting Better Prompts",
+                icon: "pen-tool",
+                timing: "Core Skill",
+                content: "To get the best results from Copilot Chat, ask clearly and provide context. Be specific about your request, set a role or style, and mention any format constraints. You can even ask the AI itself to help you write or refine your prompt!",
+                tips: [
+                    "Specify format constraints (e.g., 'Give the answer in bullet points').",
+                    "Provide context for your scenario to get better answers.",
+                    "Use meta-prompting: Ask the AI to write the perfect prompt for your task."
+                ]
+            },
+            {
+                id: 2,
+                title: "Best Use Cases (Do's & Don'ts)",
+                icon: "list-checks",
+                timing: "Application",
+                content: "Copilot is excellent for brainstorming ideas, summarising long reports, drafting emails, and explaining complex jargon in simple terms. However, you should avoid relying on it for final decisions without human checking, and never use it to completely replace your own critical thinking.",
+                tips: [
+                    "Great for: Drafting, brainstorming, and summarising.",
+                    "Avoid: Relying on it for highly specialized niche questions.",
+                    "Don't undervalue your own expertise—use AI to enhance your work."
+                ]
+            },
+            {
+                id: 3,
+                title: "Iterate & Change Settings",
+                icon: "settings",
+                timing: "Refinement",
+                content: "Using AI effectively means guiding it and refining its output, not blindly accepting the first answer. Copilot Chat remembers context within the same conversation, so you can ask follow-up questions or instruct it to adjust the previous response. Take time to explore your chat settings to tweak the tone.",
+                tips: [
+                    "Say 'That's not what I need - please adjust X...'.",
+                    "Adjust settings to govern the creativity vs. precision of the output.",
+                    "Refine and iterate until you get the exact format required."
+                ]
+            },
+            {
+                id: 4,
+                title: "Custom Bots & Transcripts",
+                icon: "bot",
+                timing: "Automation",
+                content: "Take your productivity a step further by making custom bots to help you with specific jobs. One of the best quick wins is setting up custom agents to handle note-taking directly from your Teams meeting transcripts. This allows you to automatically extract decisions and action items without manual review.",
+                tips: [
+                    "Automate repetitive tasks to free yourself for higher-value work.",
+                    "Point custom bots directly at Teams transcripts for instant summaries.",
+                    "Build tailored workflows for specific departmental needs."
+                ]
+            },
+            {
+                id: 5,
+                title: "Safe & Responsible Use",
+                icon: "shield-alert",
+                timing: "Governance",
+                content: "While AI is powerful, using it responsibly is crucial. Always double-check important outputs because generative AI can be wrong or 'hallucinate'. Don't input sensitive personal data into public AI tools. Think of AI as an assistant, not an author—any output is ultimately your responsibility.",
+                tips: [
+                    "Use secure tools like Copilot Chat for work-related data.",
+                    "Beware of biases; AI learns from human data which can include stereotypes.",
+                    "Double-check dates, facts, and figures against reliable sources."
+                ]
+            }
+        ];
+
+        // --- STATE & RENDER ---
+        let activeStepId = 1;
+
+        function initData() {
+            // Populate Theory Grid
+            const theoryCont = document.getElementById('theory-container');
+            if (theoryCont) {
+                theoryCont.innerHTML = theoryItems.map(item => `
+                    <div class="agenda-card bg-slate-900 border border-slate-800 rounded-xl p-6 transition-all duration-300 flex flex-col h-full">
+                        <div class="w-12 h-12 bg-brand-red/10 rounded-xl flex items-center justify-center mb-4 shrink-0">
+                            <i data-lucide="${item.icon}" class="w-6 h-6 text-brand-red"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-100 text-lg mb-2">${item.title}</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed flex-grow">${item.desc}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Populate Myths Grid
+            const mythsCont = document.getElementById('myths-container');
+            if (mythsCont) {
+                mythsCont.innerHTML = mythsItems.map(item => `
+                    <div class="flex flex-col gap-2">
+                        <div class="bg-slate-950 border border-slate-800 p-4 rounded-lg">
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1 block">Myth</span>
+                            <p class="text-slate-200 font-medium">"${item.myth}"</p>
+                        </div>
+                        <div class="bg-brand-red/5 border border-brand-red/20 p-4 rounded-lg flex-grow">
+                            <span class="text-xs font-bold text-brand-red uppercase tracking-widest mb-1 block">Reality</span>
+                            <p class="text-slate-400 text-sm leading-relaxed">${item.reality}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function renderStepper() {
+            const nav = document.getElementById('stepper-nav');
+            const cont = document.getElementById('step-content-inner');
+            if (!nav || !cont) return;
+
+            nav.innerHTML = steps.map(step => {
+                const isActive = step.id === activeStepId;
+                return `
+                    <button onclick="updateStep(${step.id})" class="flex items-center gap-4 p-4 rounded-xl text-left border transition-all duration-300 w-full 
+                        ${isActive ? 'bg-brand-red/10 border-brand-red/40 text-brand-red shadow-lg' : 'bg-slate-950 border-slate-800 text-slate-500 hover:bg-slate-900 hover:text-slate-300'}">
+                        <div class="p-2 rounded-lg ${isActive ? 'bg-brand-red/20' : 'bg-slate-800'} transition-colors">
+                            <i data-lucide="${step.icon}" class="w-5 h-5"></i>
+                        </div>
+                        <div class="flex-1 font-medium text-sm">
+                            <div class="text-[10px] uppercase font-bold tracking-widest opacity-80 mb-0.5 ${isActive ? 'text-brand-red' : ''}">${step.timing}</div>
+                            ${step.title}
+                        </div>
+                    </button>
+                `;
+            }).join('');
+
+            cont.innerHTML = steps.map(step => {
+                const isActive = step.id === activeStepId;
+                return `
+                    <div class="step-transition ${isActive ? 'opacity-100 translate-x-0 relative flex flex-col h-full' : 'opacity-0 translate-x-12 absolute top-0 left-0 w-full h-full pointer-events-none hidden'}">
+                        <div class="flex items-center gap-4 mb-8 shrink-0">
+                            <div class="p-4 bg-brand-red/20 text-brand-red rounded-2xl">
+                                <i data-lucide="${step.icon}" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-black text-slate-100 uppercase tracking-tight">${step.title}</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="content-scroll mb-8 shrink-0">
+                            <p class="text-lg text-slate-300 leading-relaxed">${step.content}</p>
+                        </div>
+
+                        <div class="bg-slate-900/80 rounded-2xl p-6 border border-slate-800 mt-auto shrink-0">
+                            <h4 class="flex items-center gap-2 text-xs font-black text-slate-500 uppercase tracking-widest mb-4">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-brand-red"></i>
+                                Application Focus
+                            </h4>
+                            <ul class="space-y-4">
+                                ${step.tips.map(tip => `
+                                    <li class="flex items-start gap-3 text-slate-400 text-sm">
+                                        <i data-lucide="arrow-right-circle" class="w-5 h-5 text-brand-red shrink-0 mt-0.5"></i>
+                                        <span>${tip}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        window.updateStep = (id) => {
+            activeStepId = id;
+            renderStepper();
+        };
+
+        window.onload = function() {
+            initData();
+            renderStepper();
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
